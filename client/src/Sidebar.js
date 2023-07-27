@@ -3,8 +3,6 @@ import React, {useState} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {icon} from "@fortawesome/fontawesome-svg-core/import.macro";
 
-import {Routes, Route} from "react-router-dom";
-
 function SidebarItem({description, index}) {
     return (
         <div className='block lg:table-row hover:text-black cursor-pointer pb-10'>
