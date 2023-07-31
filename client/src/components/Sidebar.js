@@ -3,14 +3,20 @@ import React, {useState} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {icon} from "@fortawesome/fontawesome-svg-core/import.macro";
 
-function SidebarItem({description, index}) {
+function SidebarItem({index, description}) {
     return (
         <div className='block lg:table-row hover:text-black cursor-pointer pb-10'>
             <div className='lg:pr-10 block lg:table-cell text-center'>
-                <p>Chapter {index+1}</p>
+                <p>
+                    <a href={description}>
+                        Chapter {index+1}
+                    </a>
+                </p>
             </div>
             <div className='block lg:table-cell text-center lg:text-end'>
-                <p>{description}</p>
+                <a href={description}>
+                    <p>{description}</p>
+                </a>
             </div>
         </div>
     )
@@ -22,16 +28,13 @@ function Sidebar({items}) {
 
     const toggleOpen = () => {
         setOpen(!open)
-        console.log(open)
-
-        body.classList.toggle('dark');
-
+        body.classList.toggle('bg-[#acd0e3]');
     }
 
     const table_rows = items.map((item, index) => {
-        return <SidebarItem description={item} index={index}/>
+        return <SidebarItem key={"sidebarItem" + index} index={index} description={item} />
     })
-    let menuIcon = open ? 'bars' : "x"
+
     return (
         <div className={"fixed right-0 bg-[#0097ee] text-white font-nunito h-screen lg:w-[450px] linear-in duration-200 " + (open ? "w-[80%]" : "w-[80px]")}>
 
@@ -52,6 +55,11 @@ function Sidebar({items}) {
                     </div>
 
                 </div>
+            </div>
+            <div>
+                <a href="/" className={"absolute right-[30px] bottom-[30px] font-[900]"}>
+                    <FontAwesomeIcon icon={icon({name: "home" }) } size= "xl" />
+                </a>
             </div>
         </div>
     )
