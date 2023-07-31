@@ -9,3 +9,9 @@ services:
       - "4001:3001"
     environment:
       PORT: "3001"
+    networks:
+      - nginx-proxy-manager_default
+
+networks:
+  nginx-proxy-manager_default:
+    external: true
