@@ -8,7 +8,23 @@ module.exports = {
   theme: {
     extend: {
         fontFamily: {
-            'nunito': ['nunito', 'sans-serif']
+            'inter': ['Inter', 'sans-serif']
+        },
+        keyframes: {
+            slideUp: {
+                from: {
+                    transform: 'translateY(0px)',
+                    opacity: '1'
+                },
+                to: {
+                    transform: 'translateY(-50px)',
+                    opacity: '0'
+                }
+
+            }
+        },
+        animation: {
+            slideUp: '0.8s ease-in 0s 1 slideUp'
         }
     },
   },

@@ -24,11 +24,9 @@ function SidebarItem({index, description}) {
 
 function Sidebar({items}) {
     const [open, setOpen] = useState(false)
-    let body = document.getElementById("body");
 
     const toggleOpen = () => {
         setOpen(!open)
-        body.classList.toggle('bg-[#acd0e3]');
     }
 
     const table_rows = items.map((item, index) => {
@@ -36,7 +34,7 @@ function Sidebar({items}) {
     })
 
     return (
-        <div className={"fixed right-0 bg-[#0097ee] text-white font-nunito h-screen lg:w-[450px] linear-in duration-200 " + (open ? "w-[80%]" : "w-[80px]")}>
+        <div className={"fixed z-10 right-0 bg-[#0097ee] text-white font-inter h-screen lg:w-[450px] linear-in duration-200 " + (open ? "w-[80%]" : "w-[80px]")}>
 
             <button className={"absolute right-[30px] top-[30px] lg:hidden font-[900]"} onClick={toggleOpen}>
                 <FontAwesomeIcon icon={open ? icon({name: "x" }) : icon({name: "bars" }) } size= "xl" />

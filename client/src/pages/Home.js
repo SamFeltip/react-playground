@@ -21,7 +21,7 @@ function Home() {
 
     return (
         <div
-            className="break-words font-nunito px-[50px] 2xl:ps-[250px] pt-[10vh] lg:pt-[20vh] me-[70px] lg:me-[450px]">
+            className="break-words font-inter px-[50px] 2xl:ps-[250px] pt-[10vh] lg:pt-[20vh] me-[70px] lg:me-[450px]">
             <div className="pb-10">
                 <h1 className="text-[40px] lg:text-[50px] text-[#020b10ff] font-[600]">
                     React Playground
