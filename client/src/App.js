@@ -4,8 +4,8 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Properties from "./pages/properties";
-import States from "./pages/states";
+import Properties from "./pages/Properties";
+import States from "./pages/States";
 
 import Sidebar from './components/Sidebar';
 

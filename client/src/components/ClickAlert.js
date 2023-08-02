@@ -18,7 +18,7 @@ export class ClickAlert extends React.Component {
 
         return (
 
-            <div className={"animate-slideUp opacity-0 absolute z-10 text-amber-500 h-0 hover:hidden"} style={randomPosition}>
+            <div className={"animate-slideUp opacity-0 absolute z-10 text-amber-500 h-0"} style={randomPosition}>
                 +1
             </div>
         )
