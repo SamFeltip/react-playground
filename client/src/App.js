@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Properties from "./pages/Properties";
-import States from "./pages/States";
+import CookieClicker from "./pages/CookieClicker";
 
 import Sidebar from './components/Sidebar';
 
@@ -14,7 +14,7 @@ function App() {
 
     const sidebar_items = [
         "properties",
-        "states",
+        "cookie-clicker",
         "something else"
     ]
 
@@ -26,8 +26,7 @@ function App() {
                 <Routes>
                     <Route path={"/"} element={<Home />} />
                     <Route path={"/properties"} element={<Properties />} />
-                    <Route path={"/states"} element={<States />} />
-
+                    <Route path={"/cookie-clicker"} element={<CookieClicker />} />
                 </Routes>
             </BrowserRouter>
         </div>
