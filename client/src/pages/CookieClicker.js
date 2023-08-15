@@ -12,13 +12,25 @@ class CookieClicker extends React.Component {
         this.buttonSize = 200;
         this.clickAlerts = [];
 
+
+        this.automataTypes = {
+            'robot': {
+                icon: icon({name: 'robot'}),
+                cost: 20
+            },
+
+            'person': {
+                icon: icon({name: 'user'}),
+                cost: 20
+            }
+        }
     }
 
     state = {
         cookiesEarned: 0,
         automataCount: {
             robot: 0,
-            user: 0
+            person: 0
         }
     }
 
@@ -41,7 +53,7 @@ class CookieClicker extends React.Component {
         this.setState(
             {
                 cookiesEarned: this.state.cookiesEarned,
-                automata: new_automata
+                automataCount: new_automata
             }
         )
 
@@ -76,37 +88,25 @@ class CookieClicker extends React.Component {
                 </div>
 
                 <div>
+                    {
+                        Object.entries(this.automataTypes).map(([key, automataStructure]) => (
+                            <div key={"automataWrapper" + key} className={"flex flex-row justify-between items-center mb-5"}>
 
-                    <div className={"flex flex-row justify-between items-center mb-5"}>
+                                <Automata
+                                    onClick={this.purchaseAutomata}
+                                    dataAutomataName={key}
+                                    icon={automataStructure.icon}
+                                    cost={automataStructure.cost}
+                                />
 
-                        <Automata
-                            onClick={this.purchaseAutomata}
-                            dataAutomataName={'robot'}
-                            icon={icon({name: 'robot'})}
-                            cost={20}
-                        />
-                        <div>
-                            <FontAwesomeIcon icon={icon({name: 'robot'})} size="xl"/>
-                            <span className="ps-2">{`x${this.state.automataCount["robot"]}`}</span>
-                        </div>
+                                <div>
+                                    <FontAwesomeIcon icon={automataStructure.icon} size="xl"/>
+                                    <span className="ps-2">{`x${this.state.automataCount[key]}`}</span>
+                                </div>
 
-                    </div>
-
-                    <div className={"flex flex-row justify-between items-center mb-5"}>
-
-                        <Automata
-                            onClick={this.purchaseAutomata}
-                            dataAutomataName={'user'}
-                            icon={icon({name: 'user'})}
-                            cost={50}
-                        />
-                        <div>
-                            <FontAwesomeIcon icon={icon({name: 'user'})} size="xl"/>
-                            <span className="ps-2">{`x${this.state.automataCount["user"]}`}</span>
-                        </div>
-
-                    </div>
-
+                            </div>)
+                        )
+                    }
                 </div>
             </div>
 
